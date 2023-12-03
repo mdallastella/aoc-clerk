@@ -1,11 +1,8 @@
 #+title: Advent of Clerk
-#+author: Ellis Kenyő
+#+author: Marco Dalla Stella
 #+date: \today
-#+latex_class: chameleon
 
-[[https://github.com/elken/aoc/actions/workflows/deploy.yml][https://github.com/elken/aoc/actions/workflows/deploy.yml/badge.svg]]
-
-A repo containing all my advent of code solutions; built in Clerk.
+A repo containing my advent of code solutions; built in Clerk.
 
 Those unfamiliar should read [[https://adventofcode.com/2022/about][here]] but in short it's an annual programming puzzle
 competition focused around [[https://en.wikipedia.org/wiki/Advent_calendar][the Advent]].
@@ -41,3 +38,4 @@ the problems look almost identical.
 
 * Credits
 - [[https://github.com/nextjournal/advent-of-clerk][Advent of Clerk]] of which this is based on
+- [[https://github.com/elken/aoc][elken/aoc]] this is a fork of this repository 🙏
