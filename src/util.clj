@@ -25,7 +25,7 @@
       (apply str (mapcat str parts)))))
 
 (defn load-title
-  "Given a DAY and a YEAR, return the titel of the problem."
+  "Given a DAY and a YEAR, return the title of the problem."
   [day year]
   (let [day (str (parse-long day))
         file-name (format "day%s-%s.html" day year)

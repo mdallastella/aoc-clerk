@@ -7,16 +7,15 @@
             [clojure.string :as str]))
 
 ;; # Problem
-{:nextjournal.clerk/visibility {:code :hide :result :show}}
-(clerk/html (u/load-problem "DAY" "YEAR"))
-{:nextjournal.clerk/visibility {:code :show :result :show}}
+^::clerk/no-cache (clerk/html (u/load-problem "DAY" "YEAR"))
 
 ;; # Solution
 ;;
 ;; First things first, let's load our input and parse it
+{:nextjournal.clerk/visibility {:code :show :result :hide}}
 (def input (->> (slurp (io/resource "inputs/YEAR/dayDAY.txt")) ;; Load the resource
                 str/split-lines))                             ;; Split into lines
-{:nextjournal.clerk/visibility {:result :hide}}
+{:nextjournal.clerk/visibility {:result :show}}
 
 ;; ## Part 1
 (defn part-1
@@ -24,15 +23,12 @@
   (println "Part 1"))
 
 ;; Which gives our answer
-{:nextjournal.clerk/visibility {:code :hide :result :show}}
 (part-1 input)
 
 ;; ## Part 2
-{:nextjournal.clerk/visibility {:code :show :result :hide}}
 (defn part-2
   [input]
   (println "Part 2"))
 
 ;; Which gives our answer
-{:nextjournal.clerk/visibility {:code :hide :result :show}}
 (part-2 input)

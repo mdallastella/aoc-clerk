@@ -7,8 +7,7 @@
             [clojure.string :as str]))
 
 ;; # Problem
-
-(clerk/html (u/load-problem "01" "2023"))
+^::clerk/no-cache (clerk/html (u/load-problem "01" "2023"))
 
 ;; # Solution
 ;;
@@ -57,7 +56,7 @@
 (collect-numbers "a1b2c3d4e5f")
 (collect-numbers "treb7uchet")
 
-;;
+;; Now we can collect all the numbers from each input lines and sum them
 (defn part-1
   [input]
   (->> input
@@ -65,15 +64,12 @@
        (apply +)))
 
 ;; Which gives our answer
-{:nextjournal.clerk/visibility {:code :hide :result :show}}
 (part-1 input)
 
 ;; ## Part 2
-{:nextjournal.clerk/visibility {:code :show :result :hide}}
 (defn part-2
   [input]
   (println "Part 2"))
 
 ;; Which gives our answer
-{:nextjournal.clerk/visibility {:code :hide :result :show}}
 (part-2 input)
