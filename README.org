@@ -1,0 +1,43 @@
+#+title: Advent of Clerk
+#+author: Ellis Kenyő
+#+date: \today
+#+latex_class: chameleon
+
+[[https://github.com/elken/aoc/actions/workflows/deploy.yml][https://github.com/elken/aoc/actions/workflows/deploy.yml/badge.svg]]
+
+A repo containing all my advent of code solutions; built in Clerk.
+
+Those unfamiliar should read [[https://adventofcode.com/2022/about][here]] but in short it's an annual programming puzzle
+competition focused around [[https://en.wikipedia.org/wiki/Advent_calendar][the Advent]].
+
+* Why Clerk?
+
+For anyone that's used Clerk before, the answer should be obvious; but otherwise
+Clerk is a notebook-style live programming environment for Clojure that also
+renders comments in Markdown.
+
+Without needing extra files (other than 1 index page) and adding in some
+comments, I can export my namespaces as HTML pages with examples; and even use
+custom HTML viewers.
+
+Live is /truly/ live, within milliseconds of me saving my namespace the running
+output (called by =bb serve=) updates with the computed result. Long-running
+answers happen during evaluation time but as soon as that's done the page
+updates. The instant feedback in this kind of environment is vital.
+
+* How do I include the problem definition in the output?
+Each namespace has a call that looks like
+
+#+begin_src clojure
+(clerk/html (u/load-problem "10" "2022"))
+#+end_src
+
+Which attempts to get the page for the problem (with the user's token; so that
+part 2 can be acquired) and using a custom user-agent so that Eric knows where
+this is coming from (in this case it's just a link to this repo). The page is
+then parsed and the =article= tags are pulled; which contain both parts.
+=clerk/html= can then simply render the HTML strings and with some CSS overriding;
+the problems look almost identical.
+
+* Credits
+- [[https://github.com/nextjournal/advent-of-clerk][Advent of Clerk]] of which this is based on
