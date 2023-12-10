@@ -31,9 +31,9 @@
                         "eight" 8
                         "nine"  9))
 
-;; Let's see if the match `n` is already a number or if we need to look into out
+;; Let's see if the match is already a number or if we need to look into out
 ;; `digits` map. Since the match is going to be a vector like `["" "1"]` or
-;; `["" "one"]` we already destructure the provided argument.
+;; `["" "one"]`, we destructure the provided argument.
 (defn parse-number
   [[_ match]]
   (if (Character/isDigit (first match)) ;; String are collection of characters, we just test the first element.
@@ -77,7 +77,7 @@
 
 ;; ## Part 2
 
-;; There's a trick here, where are using the look-ahead regex operator `?=` to
+;; There's a trick here, we'll use the look-ahead regex operator `?=` to
 ;; deal with cases like `oneight`.
 (def literal-pattern
   #"(?=(one|two|three|four|five|six|seven|eight|nine|\d))")
@@ -91,6 +91,7 @@
 (collect-numbers "zoneight234" literal-pattern)
 (collect-numbers "7pqrstsixteen" literal-pattern)
 
+;; Again, we can collect all the numbers from each lines an sum them:
 (defn part-2
   [input]
   (->> input

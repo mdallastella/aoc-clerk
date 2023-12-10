@@ -4,7 +4,7 @@
   (:require [clojure.java.io :as io]
             [util :as u]
             [nextjournal.clerk :as clerk]
-            [clojure.string :as str]))
+            [clojure.string :as s]))
 
 ;; # Problem
 ^::clerk/no-cache (clerk/html (u/load-problem "DAY" "YEAR"))
@@ -12,10 +12,8 @@
 ;; # Solution
 ;;
 ;; First things first, let's load our input and parse it
-{:nextjournal.clerk/visibility {:code :show :result :hide}}
 (def input (->> (slurp (io/resource "inputs/YEAR/dayDAY.txt")) ;; Load the resource
-                str/split-lines))                             ;; Split into lines
-{:nextjournal.clerk/visibility {:result :show}}
+                s/split-lines))                             ;; Split into lines
 
 ;; ## Part 1
 (defn part-1
